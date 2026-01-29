@@ -69,7 +69,7 @@ const PostCard = ({ post }) => {
   const likeOrDislikeHandler = async () => {
     try {
       const action = liked ? 'dislike' : 'like'
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post._id}/${action}`, { withCredentials: true })
+      const res = await axios.get(`https://fb-clone-backend-dun.vercel.app/api/v1/post/${post._id}/${action}`, { withCredentials: true })
       if (res.data.success) {
         const updatedLikes = liked ? postLike - 1 : postLike + 1;
         setPostLike(updatedLikes)
@@ -93,7 +93,7 @@ const PostCard = ({ post }) => {
 
   const deleteHandler = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${id}`, { withCredentials: true })
+      const res = await axios.delete(`https://fb-clone-backend-dun.vercel.app/api/v1/post/delete/${id}`, { withCredentials: true })
       if (res.data.success) {
         toast.success(res.data.message)
       }
@@ -141,7 +141,7 @@ const PostCard = ({ post }) => {
     formData.append("content", content)
     if (file) formData.append("file", file)
     try {
-      const res = await axios.put(`http://localhost:8000/api/v1/post/update-post/${id}`, formData, {
+      const res = await axios.put(`https://fb-clone-backend-dun.vercel.app/api/v1/post/update-post/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         },

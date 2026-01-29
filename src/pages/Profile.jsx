@@ -25,7 +25,7 @@ const Profile = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/auth/profile/${params.id}`)
+      const res = await axios.get(`https://fb-clone-backend-dun.vercel.app/api/v1/auth/profile/${params.id}`)
       if (res.data.success) {
         dispatch(setUserProfile(res.data.user))
       }
@@ -44,7 +44,7 @@ const Profile = () => {
 
     try {
       dispatch(setLoading(true))
-      const res = await axios.put(`http://localhost:8000/api/v1/auth/update/profile-pic`, formData, {
+      const res = await axios.put(`https://fb-clone-backend-dun.vercel.app/api/v1/auth/update/profile-pic`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         },
@@ -71,7 +71,7 @@ const Profile = () => {
 
     try {
       dispatch(setLoading(true))
-      const res = await axios.put(`http://localhost:8000/api/v1/auth/update/cover-pic`, formData, {
+      const res = await axios.put(`https://fb-clone-backend-dun.vercel.app/api/v1/auth/update/cover-pic`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         },

@@ -47,7 +47,7 @@ const Signup = () => {
        e.preventDefault()
        console.log(formData);
        try {
-         const response = await axios.post(`http://localhost:8000/api/v1/auth/register`, formData, {
+         const response = await axios.post(`https://fb-clone-backend-dun.vercel.app/api/v1/auth/register`, formData, {
             headers: {
                 "Content-Type":"application/json"
             },

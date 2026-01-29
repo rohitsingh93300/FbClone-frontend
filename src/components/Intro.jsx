@@ -92,7 +92,7 @@ const Intro = () => {
   const submitHandler = async () => {
     try {
       setLoadingIntro(true)
-      const res = await axios.put(`http://localhost:8000/api/v1/auth/update-intro`, introData, {
+      const res = await axios.put(`https://fb-clone-backend-dun.vercel.app/api/v1/auth/update-intro`, introData, {
         headers: {
           "Content-Type": "application/json"
         },

@@ -15,7 +15,7 @@ const CommentBox = ({ post, formatFBTime }) => {
     
     const postCommentHandler = async (id) => {
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/comment/${id}/create`, { content }, {
+            const res = await axios.post(`https://fb-clone-backend-dun.vercel.app/api/v1/comment/${id}/create`, { content }, {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -34,7 +34,7 @@ const CommentBox = ({ post, formatFBTime }) => {
   
     const deleteCommentHandler = async(id)=>{
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/comment/${id}/delete`, {
+            const res = await axios.delete(`https://fb-clone-backend-dun.vercel.app/api/v1/comment/${id}/delete`, {
                 withCredentials: true
             })
             if (res.data.success) {
@@ -50,7 +50,7 @@ const CommentBox = ({ post, formatFBTime }) => {
 
     const likeCommentHandler = async (commentId) =>{
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/comment/${commentId}/like`, {}, {
+            const res = await axios.post(`https://fb-clone-backend-dun.vercel.app/api/v1/comment/${commentId}/like`, {}, {
                 withCredentials: true
             })
             if (res.data.success) {

@@ -54,7 +54,7 @@ const CreatePost = () => {
     
             console.log(formData)
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/post/create`, formData, {
+            const res = await axios.post(`https://fb-clone-backend-dun.vercel.app/api/v1/post/create`, formData, {
                 headers:{
                     "Content-Type":"multipart/form-data"
                 },
